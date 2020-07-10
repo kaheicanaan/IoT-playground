@@ -1,5 +1,6 @@
-import requests
 import logging
+
+import requests
 
 logger = logging.getLogger(__name__)
 
@@ -17,7 +18,7 @@ def get_weather_data():
                 for _data in weather_from_hko['temperature']['data']
                 if _data['place'] == 'Hong Kong Observatory'
             ][0],
-            'uvindex':  weather_from_hko['uvindex']
+            'uvindex': weather_from_hko['uvindex']
         }
     except BaseException:
         logger.warning('Error found.', exc_info=True)

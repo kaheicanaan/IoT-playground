@@ -17,7 +17,6 @@ def _get_thermal_info():
     proc = subprocess.Popen(bash_command, shell=True, stdout=subprocess.PIPE)
 
     output = proc.communicate()[0].decode()
-    print(output)
 
     thermal_info = dict()
     for line in output.split('\n'):
